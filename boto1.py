@@ -21,7 +21,7 @@ response = elb.describe_target_health(
     Targets=[
         {
             'Id': instance,
-            'Port': 80,
+            'Port': listport,
         },
     ],
 )
