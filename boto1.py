@@ -1,6 +1,12 @@
 import boto3
+import sys
 
-elb = boto3.client('elbv2')
+try:
+    elb = boto3.client('elbv2')
+except Exception as e:
+    print ("ERROR: failed to connect to EC2")
+    sys.exit(1)
+     
 
 # Welcome print statement
 print(''' This program allows you to progrmatically view the health status of an instance in a target group, all you need are 3 inputs 
